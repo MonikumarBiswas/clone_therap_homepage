@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
 
 
     <title>Therap BD </title>
@@ -20,28 +26,28 @@
 
 <body>
     <!--header section-->
-    <div class="sticky top-0 z-50">
+    <nav class="sticky top-0 z-50">
         <div class="bg-[#f9d10a]  h-20 flex justify-between items-center p-5">
             <img src="therap-bd-logo-230225-rgb.png" alt="therap-bd-logo-230225-rgb" class="md:w-[30%] w-[25%] pr-0">
-            <div class="sm:hidden"> <i class="fa-solid fa-bars"></i></div>
-            <div class="hidden sm:block">
-                <a href="#" class="font-bold p-3">Current Opening</a>
-                <a href="#" class="font-bold p-3">Department</a>
-                <a href="#" class="font-bold p-3">About Us</a>
-                <a href="#" class="font-bold p-3">Contact Us</a>
+            <div onclick="nav_bar_click()" id="hamburger" class="sm:hidden"> <i class="fa-solid fa-bars"></i></div>
+            <div id="nav-bar-element"  class="hidden sm:block flex-col  justify-center sm:justify-start  sm:flex-row sm:gap-0" >
+                <a href="#" class="font-bold p-3  hover:bg-slate-100 hover:shadow-2xl hover:rounded-2xl">Current Opening</a>
+                <a href="#" class="font-bold p-3  hover:bg-slate-100 hover:shadow-2xl hover:rounded-2xl">Department</a>
+                <a href="#" class="font-bold p-3  hover:bg-slate-100 hover:shadow-2xl hover:rounded-2xl">About Us</a>
+                <a href="#" class="font-bold p-3  hover:bg-slate-100 hover:shadow-2xl hover:rounded-2xl">Contact Us</a>
             </div>
         </div>
-    </div>
+    </nav>
 
     <!--Hero section-->
     <div class="z-50 ">
         <div class=" flex justify-between bg-[#ECDCE8]">
             <div class="w-[50%]"> <img src="therap.webp" class="h-full object-fill" alt=""></div>
             <div class="flex flex-col md:items-center justify-center   gap-2 items-start text-2xl p-5 w-[50%] md:gap-5">
-                <h2 class=" font-bold text-2xl text-justify md:font-extrabold md:text-3xl ">You don't just learn
+                <h2 class=" font-bold text-2xl text-justify animate__animated animate-pulse md:font-extrabold md:text-3xl ">You don't just learn
                     here.<br> you grow,</h2>
-
-                <button class="bg-[#f9d10a] p-3 text-2xl rounded-2xl  font-bold w-44 shadow-2xl">Apply Now</button>
+                    <div class="animate__animated  animate-bounce">Hello world! i am a Web_Developer.</div>
+                <button onclick="apply()" class="bg-[#f9d10a] p-3 text-2xl rounded-2xl  font-bold w-44 shadow-2xl">Apply Now</button>
             </div>
         </div>
     </div>
@@ -51,8 +57,9 @@
         <h1 class="text-center font-[500]  text-4xl">Therap (BD) Ltd. at a Glance</h1>
     </div>
 
-    <div
-        class="sticky  inset-y-0 bottom-80 left-0 w-14 z-40 top-56  h-40 p-5 bg-yellow-300 flex flex-col items-center  justify-between top-30 ">
+    <!--side bar-->
+    <div id="side_info"
+        class="sticky  inset-y-0 bottom-80 left-0 w-2 sm:w-7 z-40 top-56  h-40 p-5 bg-yellow-300 flex flex-col items-center  justify-between top-30 ">
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-linkedin"></i>
         <i class="fa-brands fa-youtube"></i>
@@ -308,29 +315,29 @@
             </div>
             <div class="md:flex pb-10">
                 <div class="flex gap-3 flex-col md:w-[30%]">
-                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start "><a href="#"
-                            class="p-4 text-3xl font-sans font-[400]">Outdoor Games</a></div>
-                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start "><a href="#"
-                            class="p-4 text-3xl font-sans font-[400]">Indoor Games</a></div>
-                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start "><a href="#"
-                            class="p-4 text-3xl font-sans font-[400]">BBQ Night</a></div>
-                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start "><a href="#"
-                            class="p-4 text-3xl font-sans font-[400]">Therap Family Day</a></div>
-                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start "><a href="#"
-                            class="p-4 text-3xl font-sans font-[400]">Gym and Yoga</a></div>
-                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start "><a href="#"
-                            class="p-4 text-3xl font-sans font-[400]">Photography Exhibition</a></div>
+                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start hover:bg-[#a7c957]" ><a  href="#"
+                            class="p-4 text-3xl text-center font-sans font-[400]" id="sports">Outdoor Games</a></div>
+                    <div class="bg-[#ffd60a] h-24 text-center flex justify-center items-start hover:bg-[#a7c957] "><a href="#"
+                            class="p-4 text-3xl font-sans font-[400]" id="indoor_game">Indoor Games</a></div>
+                    <div class="bg-[#ffd60a] h-24 text-center flex justify-center items-start hover:bg-[#a7c957]"><a href="#"
+                            class="p-4 text-3xl font-sans font-[400]" id="bbq">BBQ Night</a></div>
+                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start hover:bg-[#a7c957] "><a href="#"
+                            class="p-4 text-3xl text-center font-sans font-[400]" id="family_day">Therap Family Day</a></div>
+                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start hover:bg-[#a7c957]"><a href="#"
+                            class="p-4 text-3xl text-center font-sans font-[400]" id="gym">Gym and Yoga</a></div>
+                    <div class="bg-[#ffd60a] h-24 flex justify-center items-start  hover:bg-[#a7c957]"><a href="#"
+                            class="p-4 text-3xl font-sans text-center font-[400]" id="photography">Photography Exhibition</a></div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 mt-5 gap-4 md:w-[70%] md:ml-10 pb-10">
-                    <img src="sports.png" alt="photo"
+                <div id="display_photo" class="grid grid-cols-1 md:grid-cols-1 mt-5 gap-4 md:w-[70%] md:ml-10 pb-10">
+                    <img src="sports.png" alt="photo" id="ph-1"
                         class="object-contain mt-5  shadow-2xl shadow-slate-700  mb-5 w-full">
-                    <img src="ss.png" alt="photo" class="object-contain mt-5  shadow-2xl shadow-slate-700  mb-5 w-full">
-                    <img src="sss.png" alt="photo"
-                        class="object-contain mt-5  shadow-2xl shadow-slate-700  mb-5 w-full">
-                    <img src="tr.png" alt="photo" class="object-contain mt-5  shadow-2xl shadow-slate-700  mb-5 w-full">
-                    <img src="fg.png" alt="photo" class="object-contain mt-5   shadow-2xl shadow-slate-700 mb-5 w-full">
-                    <img src="sssss.png" alt="photo"
-                        class="object-contain mt-5   shadow-2xl shadow-slate-700 mb-5 w-full">
+                    <img src="ss.png" id="ss" alt="photo" class="object-contain mt-5 hidden shadow-2xl shadow-slate-700  mb-5 w-full">
+                    <img src="sss.png" id="sss" alt="photo"
+                        class="object-contain mt-5 hidden shadow-2xl shadow-slate-700  mb-5 w-full">
+                    <img src="tr.png" id="tr" alt="photo" class="object-contain mt-5 hidden shadow-2xl shadow-slate-700  mb-5 w-full">
+                    <img src="fg.png" id="fg" alt="photo" class="object-contain mt-5 hidden  shadow-2xl shadow-slate-700 mb-5 w-full">
+                    <img src="sssss.png" id="sssss" alt="photo"
+                        class="object-contain mt-5  hidden shadow-2xl shadow-slate-700 mb-5 w-full">
                 </div>
             </div>
         </div>
@@ -408,7 +415,7 @@
                     </p>
 
                     <a href="#" class="text-3xl underline">01889666533</a>
-                    <a href="#" class="text-3xl underline pb-5 md:-ml-20">monikumarbiswas226@gmail.com</a>
+                    <a href="#" class="text-2xl underline pb-5 md:-ml-20">monikumarbiswas226@gmail.com</a>
                 </div>
             </div>
 
@@ -425,6 +432,10 @@
 
     <h1 class="font-bold p-20 text-center">Copy Right : Monikumar Biswas</h1>
 
+
+
+
+    <script src="index.js"></script>
 </body>
 
 </html>
